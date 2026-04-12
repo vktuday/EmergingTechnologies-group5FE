@@ -38,7 +38,7 @@ const ADD_REQUEST = gql`
 `;
 
 export default function Dashboard({ setPage }) {
-  const { data, loading, error, refetch } = useQuery(CURRENT_USER);
+  const { loading, error, refetch } = useQuery(CURRENT_USER);
 
   const [addRequest] = useMutation(ADD_REQUEST);
 
