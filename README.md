@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Daycare Waitlist System – Assignment 3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Group Members
+- Mathurangy  
+- Sama  
+- Hasan  
+- Gurpreet  
+- Venkata  
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Project Description
 
-### `npm start`
+This project is a **Daycare Waitlist System** developed for COMP 308 Assignment 3.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The purpose of this project is to implement a **secure authentication system** using React, Node.js, GraphQL, and MongoDB Atlas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The application allows users to:
+- Register a new account  
+- Login securely  
+- Logout  
+- View their profile (current user)  
+- Access a protected dashboard  
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+### Frontend
+- React (Create React App)
+- Apollo Client
+- GraphQL
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
+- Node.js
+- Express
+- Apollo Server
+- MongoDB Atlas
+- Mongoose
+- JWT (jsonwebtoken)
+- bcrypt (password hashing)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Authentication Features
 
-### `npm run eject`
+- User Registration with hashed passwords  
+- User Login with JWT token  
+- Logout functionality  
+- currentUser GraphQL query  
+- Protected dashboard access  
+- Token stored in localStorage  
+- Automatic logout if token is invalid  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Additional Feature
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+A **Daycare Waitlist Request Form** is included in the dashboard to reflect the project topic.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The form allows users to enter:
+- Parent Name  
+- Child Name  
+- Child Age  
+- Preferred Start Date  
+- Preferred Location  
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Application Flow
+User registers → account saved in MongoDB
+User logs in → JWT token generated
+Token stored in localStorage
+User accesses dashboard
+currentUser query validates session
+Logout clears session and redirects user
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Security
+Passwords are hashed using bcrypt
+JWT is used for authentication
+Protected routes prevent unauthorized access
+Invalid tokens automatically log out users
+Sensitive data stored in .env
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contribution Breakdown
+	
+Mathurangy:	Backend setup, GraphQL schema, resolvers, authentication logic
+Sama: Frontend integration, authentication flow, protected access
+Hasan: Testing, debugging, waitlist form implementation
+Gurpreet: Styling and dashboard design
+Venkata: Documentation, testing, and support
