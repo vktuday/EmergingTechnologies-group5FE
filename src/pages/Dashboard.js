@@ -84,7 +84,7 @@ const DELETE_REQUEST = gql`
 `;
 
 export default function Dashboard({ setPage }) {
-  const { loading, error, refetch } = useQuery(CURRENT_USER);
+  const { loading, refetch } = useQuery(CURRENT_USER);
   const {
     data: requestsData,
     loading: requestsLoading,
