@@ -136,26 +136,26 @@ export default function Dashboard({ setPage }) {
     }
   }, [setPage]);
 
-  const requests = requestsData?.myRequests || [];
+  const requests = useMemo(() => requestsData?.myRequests || [], [requestsData]);
 
-const stats = useMemo(() => {
-  return {
-    total: requests.length,
-    locations: new Set(requests.map((r) => r.location)).size,
-    youngest:
-      requests.length > 0
-        ? Math.min(...requests.map((r) => Number(r.childAge)))
-        : 0,
-  };
-}, [requests]);
+  const stats = useMemo(() => {
+    return {
+      total: requests.length,
+      locations: new Set(requests.map((r) => r.location)).size,
+      youngest:
+        requests.length > 0
+          ? Math.min(...requests.map((r) => Number(r.childAge)))
+          : 0,
+    };
+  }, [requests]);
 
-if (loading && !username) return <p style={styles.loading}>Loading...</p>;
+  if (loading && !username) return <p style={styles.loading}>Loading...</p>;
 
-if (error) {
-  localStorage.clear();
-  setPage("login");
-  return null;
-}
+  if (error) {
+    localStorage.clear();
+    setPage("login");
+    return null;
+  }
 
   const handleChange = (e) => {
     setFormData({
